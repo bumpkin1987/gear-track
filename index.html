@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Matt's Instrument Catalog</title>
+  <meta name="description" content="This is a detailed listing of all of my intstruments so that I have a readily available index of what I own.">
+  <meta name="Matthew Boyles" content="Instrument Index">
+  <script src="javascript\webapp.js"></script>
+  <link rel="stylesheet" href="stylesheets\main.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="heading">Matt's Instrument Catalog</h1>
+    </div>
+
+    <div id="fields"></div> 
+   
+    <form action="http://example.com" method="POST" class="js-form">
+        <input class="fields" name="instrumentType" type="text" value="" placeholder="Instrument type..."/>
+        <br>
+        <br>
+        <input class="fields" name="manufacturer" type="text" value="" placeholder="Manufacturer..."/>
+        <br>
+        <br>
+        <input class="fields" name="model" type="text" value="" placeholder="Model..."/>
+        <br>
+        <br>
+        <input class="fields" name="year" type="text" value="" placeholder="Year..."/>
+        <br>
+        <br>
+        <input class="fields" name="serial" type="text" value="" placeholder="Serial #..."/>
+        <br>
+        <br>
+        <input class="fields" name="condition" type="text" value="" placeholder="Condition..."/>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form> 
+    <br>
+    <br>
+    <div>
+        <p id="userInput" value=displayInstrumentData()></p>
+    </div>
+    <br>
+    <br>
+    <div>
+        <button id="printicon" onclick="displayInstrumentData()">Print</button>
+    </div>
+    
+  
+</body>
+</html>
