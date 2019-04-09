@@ -1,6 +1,6 @@
 
-
-///////////////////////////////////////////////////////////////////
+const submittedData = {};
+////////////////////////////////////////////////////////////////////////////
 // funcion to put submitted field values into key:value pairs
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
@@ -8,42 +8,42 @@
         form.addEventListener('submit', event => {
             event.preventDefault();
 
-            const submittedData = {};
+
             for (let input of form.elements) {
                 if (input.name) submittedData[input.name] = input.value;
-                console.log(submittedData);
+                return(submittedData);
             }
         });
     });
     // lets me know it made my array 
 })();
 // what is (); doing here? is that just syntax to end the nameless function?
-///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 
 
 
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //should display intrument date submitted in the <p> tag
 function displayInstrumentData(){
     document.getElementById("userInput").innerHTML = "Hello Daddy Majesty";
 }
-/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 
 
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //constructor for my instrument object with its properties
-var myInstrument = new Object();
-myInstrument.instrumentType = submittedData[0];
-myInstrument.manufacturer = submittedData[1];
-myInstrument.model = submittedData[2];
-myInstrument.year = submittedData[3];
-myInstrument.serial = submittedData[4];
-myInstrument.condition = submittedData[5];
+var myInstrument = {
+instrumentType = submittedData[0],
+manufacturer = submittedData[1],
+model = submittedData[2],
+year = submittedData[3],
+serial = submittedData[4],
+condition = submittedData[5],
 //myInstrument.picture = ???
-console.log(myInstrument);
+}
 ///////////////////////////////////////////////////////////////////////////
-
+console.log(myInstrument);
 
 
 //////////////////////////////////////////////////////////////////////////////
