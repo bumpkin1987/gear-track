@@ -1,18 +1,17 @@
 
 const submittedData = {};
+let form;
+var myInstrument;
+
 ////////////////////////////////////////////////////////////////////////////
 // funcion to put submitted field values into key:value pairs
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
-        const form = document.querySelector('.js-form');
+        form = document.querySelector('.js-form');
         form.addEventListener('submit', event => {
             event.preventDefault();
-
-
-            for (let input of form.elements) {
-                if (input.name) submittedData[input.name] = input.value;
-                return(submittedData);
-            }
+            myInstrument = new Instrument();
+            displayInstrumentData(myInstrument);
         });
     });
     // lets me know it made my array 
@@ -24,8 +23,8 @@ const submittedData = {};
 
 ////////////////////////////////////////////////////////////////////////////
 //should display intrument date submitted in the <p> tag
-function displayInstrumentData(CreateInstrumentObject){
-    document.getElementById("userInput").innerHTML = CreateInstrumentObject;
+function displayInstrumentData(myInstrument){
+    document.getElementById("userInput").innerHTML = Object.values(myInstrument);
 }
 ////////////////////////////////////////////////////////////////////////////
 
@@ -33,13 +32,13 @@ function displayInstrumentData(CreateInstrumentObject){
 
 //////////////////////////////////////////////////////////////////////////////
 // function to create instrument object constructor. not sure which is better to try or works
-function CreateInstrumentObject(instrument, manufacturer, model, year, serial, condition) {
-    this.instrumentType = submittedData[0];
-    this.manufacturer = submittedData[1];
-    this.model = submittedData[2];
-    this.year = submittedData[3];
-    this.serial = submittedData[4];
-    this.condition = submittedData[5];
+function Instrument() {
+    this.instrumentType = form.elements[0].value;
+    this.manufacturer = form.elements[1].value;
+    this.model = form.elements[2].value;
+    this.year = form.elements[3].value;
+    this.serial = form.elements[4].value;
+    this.condition = form.elements[5].value;
     // this.picture = 'whatever user uploaded';
 }
 /////////////////////////////////////////////////////////////////////////////////
